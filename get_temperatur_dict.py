@@ -4,7 +4,7 @@ import numpy as np
 
 
 from obspy import UTCDateTime
-useids=["00433", "03137"]
+#useids=["00433", "03137"]  # for testing
 
 import glob
 
@@ -21,7 +21,8 @@ def get_station_from_id(id):
         s+=w+" "
     return s
 
-wfiles=sorted(glob.glob("../opendata.dwd.de/climate_environment/CDC/observations_germany/climate/subdaily/air_temperature/historical/produkt_tu_termin_1[8-9][0-6]*_202[0-9]*"))
+#wfiles=sorted(glob.glob("../opendata.dwd.de/climate_environment/CDC/observations_germany/climate/subdaily/air_temperature/historical/produkt_tu_termin_1[8-9][0-6]*_202[0-9]*"))
+wfiles=sorted(glob.glob("./data/produkt_tu_termin_1[8-9][0-6]*_202[0-9]*"))
 
 fig=plt.figure()
 ax=fig.add_subplot(111)
