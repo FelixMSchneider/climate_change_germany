@@ -28,9 +28,10 @@ else:
         print(year)
         valyear=[]
         for id in ids:
+            meanb=tdict[id]["meanb"] 
             if year in np.array(tdict[id]["sumdatetimes"]):
                 indx=np.where(year == np.array(tdict[id]["sumdatetimes"]))[0][0]
-                valyear.append(tdict[id]["sumvals"][indx])
+                valyear.append(tdict[id]["sumvals"][indx] - meanb)
         valyears.append(valyear)
     
     pickle.dump(valyears, open("valyears.pickle", "wb"))
