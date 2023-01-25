@@ -19,6 +19,14 @@
 
     python get_temperatur_dict.py
 
+### plot Tdiff for individual weather stations in  Germany
+
+    cd hist_plot
+    python plot_temperatur_single_stations.py
+
+    comment: this plots can be regarded as definition of Tdiff
+
+
 ### create histogram plot for all available weather stations in Germany
 
     cd hist_plot
