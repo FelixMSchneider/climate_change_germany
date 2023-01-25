@@ -14,7 +14,7 @@ datafile=Tdiff.grd
 psname=Tdiff_map.ps
 
 
-makecpt -Chot -I  -D -T1.4/3.0/0.2  > Tdiff.cpt
+makecpt -Chot -I  -D -T1.4/3.0/0.1  > Tdiff.cpt
 
 grep -v nan mean_lat_lon_tdiff_0.5.dat|grep ^[0-9] > Tdiff.xyz
 
@@ -36,10 +36,10 @@ pscoast -J -R -Df $L -C115/181/230 -K -O >> $psname        # plotet Seen
 
 
 # plot station names and symbols
-#awk '{print $2" "$1" "$3}' lat_lon_tdiff |psxy $R $J -Sc0.3 -G255 -W4,0 -O -K $C >> $psname
-awk '{print $2" "$1" "$3}' lat_lon_tdiff |psxy $R $J -St0.6 -G255 -W4,0 -O -K $C >> $psname
-#awk '{print $2" "$1" "$3}' Tdiff.xyz |psxy $R $J -Sc0.5 -G255 -W4,0 -O -K $C >> $psname
-#awk '{print $6" "$5" "}'  list_wetterstationen.txt|psxy $R $J -Sc0.1 -W1,0 -O -K  >> $psname
+awk '{print $2" "$1" "$3}' lat_lon_tdiff |psxy $R $J -St0.3 -G255 -W4,0 -O -K $C >> $psname
+#awk '{print $2" "$1" "$3}' lat_lon_tdiff |psxy $R $J -St0.6 -G255 -W4,0 -O -K $C >> $psname
+awk '{print $2" "$1" "$3}' Tdiff.xyz |psxy $R $J -Sc0.5 -G255 -W4,0 -O -K $C >> $psname
+#awk '{print $6" "$5" "}'  ../list_wetterstationen.txt|psxy $R $J -Sc0.1 -W1,0 -O -K  >> $psname
 awk '{print $2" "$1" "1.35" "2.1}'  Tdiff.xyz|psxy $R $J -Sr -W1,0 -O -K  >> $psname
 
 
