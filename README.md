@@ -27,6 +27,9 @@
     comment: this plots can be regarded as definition of Tdiff
 
 
+![Tdiff_Berlin](hist_plot/temperatur_Berlin-Tempelhof.png)
+
+
 ### create histogram plot for all available weather stations in Germany
 
     cd hist_plot
