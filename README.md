@@ -1,4 +1,13 @@
-# Plot Climate data for Germany
+#Plot Climate data for Germany
+
+
+
+The corresponding data and plots were discussed by Sibylle Anderl at
+
+[Kursbuch]((https://kursbuch.online/montagsblock-180/)
+
+
+
 
 ## get data from DWD 
 
