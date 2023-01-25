@@ -1,6 +1,6 @@
 # Plot Climate data for Germany
 
-get data from 
+## get data from 
 
     https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/subdaily/air_temperature/historical/
 
@@ -15,4 +15,18 @@ get data from
     unzip $zipfile
     done
 
+### create dictionary for efficient data access
 
+    python get_temperatur_dict.py
+
+### create histogram plot for all available weather stations in Germany
+
+    cd hist_plot
+    python plot_hist_curves.py
+
+### create map plot (using GMT 4) to compare Tdiff 
+
+Tdiff = averageT(before 1990) to linregT(2022)
+
+    cd map
+    bash run.sh
