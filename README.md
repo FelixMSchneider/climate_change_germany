@@ -1,18 +1,15 @@
 # Plot Climate data for Germany
 
-## get data from 
-
-    https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/subdaily/air_temperature/historical/
-
-
+## get data from DWD 
 
     mkdir data
     cd data
 
     wget  -r -nd --no-parent -A 'terminwert*.zip' https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/subdaily/air_temperature/historical/
+
     for zipfile in `ls termin*zip` 
     do 
-    unzip $zipfile
+        unzip $zipfile
     done
 
 ### create dictionary for efficient data access
@@ -24,7 +21,7 @@
     cd hist_plot
     python plot_temperatur_single_stations.py
 
-    comment: this plots can be regarded as definition of Tdiff
+comment: this plots can be regarded as definition of Tdiff
 
 
 <img src="hist_plot/temperatur_Berlin-Tempelhof.png" width="512"/>
