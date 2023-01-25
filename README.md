@@ -2,7 +2,7 @@
 
 
 
-The corresponding data and plots were discussed by Sibylle Anderl in the german cultaral journal [Kursbuch](https://kursbuch.online/montagsblock-180/)
+The corresponding data and plots were discussed by Sibylle Anderl in the german cultural journal [Kursbuch](https://kursbuch.online/montagsblock-180/)
 
 
 
