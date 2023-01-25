@@ -35,9 +35,14 @@
     cd hist_plot
     python plot_hist_curves.py
 
+![Tdiff_Germany](hist_plot/temperatur_all_wetterstations.png)
+
 ### create map plot (using GMT 4) to compare Tdiff 
 
 Tdiff = averageT(before 1990) to linregT(2022)
 
     cd map
     bash run.sh
+
+![Tdiff_Germany_MAP](map/Tdiff_map.png)
+
