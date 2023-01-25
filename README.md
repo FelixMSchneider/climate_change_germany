@@ -27,7 +27,7 @@
     comment: this plots can be regarded as definition of Tdiff
 
 
-![Tdiff_Berlin](hist_plot/temperatur_Berlin-Tempelhof.png)
+<img src="hist_plot/temperatur_Berlin-Tempelhof.png" width="512"/>
 
 
 ### create histogram plot for all available weather stations in Germany
@@ -44,5 +44,5 @@ Tdiff = averageT(before 1990) to linregT(2022)
     cd map
     bash run.sh
 
-![Tdiff_Germany_MAP](map/Tdiff_map.png)
+<img src="map/Tdiff_map.png" width="512"/>
 
