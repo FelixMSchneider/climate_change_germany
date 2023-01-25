@@ -4,11 +4,10 @@ import numpy as np
 import pickle
 tdict=pickle.load( open("../dicts/tdict.pickle", "rb"))
 
-
 from obspy import UTCDateTime
 
-useids=["00433",]
-#useids=["03137"]
+useids=["00433","03137", "01550"]
+
 
 import glob
 
@@ -22,13 +21,11 @@ def get_station_from_id(id):
     wl=a[61:102].split()
     s=""
     for w in wl:
-        s+=w+" "
+        s+=w+"_"
     return s[0:-1]
 
 tdiffs=[]
 
-fig=plt.figure()
-ax=fig.add_subplot(111)
 
 
 from matplotlib.collections import LineCollection
@@ -42,10 +39,12 @@ alpha_array =np.concatenate((np.flip(a_first),a_first))
 
 
 for id in tdict.keys():
-
     if id == "02953": continue
-     
     if not id in useids: continue
+    fig=plt.figure()
+    ax=fig.add_subplot(111)
+
+     
     statcode=get_station_from_id(id)
     print(id, statcode)
 
@@ -118,21 +117,20 @@ for id in tdict.keys():
     ax.set_title(statcode)
     tdiffs.append(tdiff)
 
-line_segments = LineCollection(verts,linewidth=2, cmap="Blues_r", array=alpha_array)
-ax.add_collection(line_segments)
+    line_segments = LineCollection(verts,linewidth=2, cmap="Blues_r", array=alpha_array)
+    ax.add_collection(line_segments)
 
-tdiff=np.array(tdiffs).mean()
+    tdiff=np.array(tdiffs).mean()
 
 
-lyear=2035
-ax.text(datetime.datetime(lyear,6,1), meanb+0.5*tdiff , "$\Delta$ t ="+str(round(tdiff,2))+"°", fontsize=12, ha="center",va="center", bbox=dict(facecolor='white', edgecolor='white', boxstyle='round'), zorder=12)
-ax.arrow(datetime.datetime(lyear,6,1), meanb,0,tdiff, head_width=2000, length_includes_head=True, head_length=0.2, width=5, zorder=10)
-ax.arrow(datetime.datetime(lyear,6,1), meanb+tdiff,0,-tdiff, head_width=2000, length_includes_head=True, head_length=0.2, width=5)
+    lyear=2035
+    ax.text(datetime.datetime(lyear,6,1), meanb+0.5*tdiff , "$\Delta$ t ="+str(round(tdiff,2))+"°", fontsize=12, ha="center",va="center", bbox=dict(facecolor='white', edgecolor='white', boxstyle='round'), zorder=12)
+    ax.arrow(datetime.datetime(lyear,6,1), meanb,0,tdiff, head_width=2000, length_includes_head=True, head_length=0.2, width=5, zorder=10)
+    ax.arrow(datetime.datetime(lyear,6,1), meanb+tdiff,0,-tdiff, head_width=2000, length_includes_head=True, head_length=0.2, width=5)
 
-#ax.set_ylim(-4,9)
+    #ax.set_ylim(-4,9)
 
-plt.savefig("temperatur_"+statcode+".png")
-
+    plt.savefig("temperatur_"+statcode+".png")
 
 
 
