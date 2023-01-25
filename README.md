@@ -4,7 +4,7 @@
 
 The corresponding data and plots were discussed by Sibylle Anderl at
 
-[Kursbuch]((https://kursbuch.online/montagsblock-180/)
+[Kursbuch](https://kursbuch.online/montagsblock-180/)
 
 
 
