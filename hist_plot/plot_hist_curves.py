@@ -5,7 +5,7 @@ import numpy as np
 import datetime
 
 import pickle
-tdict=pickle.load(open("tdict.pickle", "rb"))
+tdict=pickle.load(open("../dicts/tdict.pickle", "rb"))
 
 ids=list(tdict.keys())
 ids.remove("02953")
@@ -20,8 +20,8 @@ allyears=sorted(list(set(b)))
 import os.path
 
 
-if os.path.isfile("valyears.pickle"):
-    valyears=pickle.load(open("valyears.pickle", "rb")) 
+if os.path.isfile("../dicts/valyears.pickle"):
+    valyears=pickle.load(open("../dicts/valyears.pickle", "rb")) 
 else:
     valyears=[]
     for year in allyears:
@@ -34,11 +34,11 @@ else:
                 valyear.append(tdict[id]["sumvals"][indx] - meanb)
         valyears.append(valyear)
     
-    pickle.dump(valyears, open("valyears.pickle", "wb"))
+    pickle.dump(valyears, open("../dicts/valyears.pickle", "wb"))
 
 
-if os.path.isfile("hists.pickle"):
-    hists=pickle.load(open("hists.pickle", "rb")) 
+if os.path.isfile("../dicts/hists.pickle"):
+    hists=pickle.load(open("../dicts/hists.pickle", "rb")) 
 else:
     hists=[]
     
@@ -51,7 +51,7 @@ else:
         hist0=hist[0]
         hist1=hist[1]
         hists.append([hist0,hist1])
-    pickle.dump(hists, open("hists.pickle", "wb"))
+    pickle.dump(hists, open("../dicts/hists.pickle", "wb"))
     
 
 time_change = datetime.timedelta(days=365)

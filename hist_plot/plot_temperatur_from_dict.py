@@ -2,7 +2,7 @@ import pylab as plt
 import numpy as np
 
 import pickle
-tdict=pickle.load( open("tdict.pickle", "rb"))
+tdict=pickle.load( open("../dicts/tdict.pickle", "rb"))
 
 
 from obspy import UTCDateTime
@@ -14,7 +14,7 @@ import glob
 
 
 def get_station_from_id(id):
-    f=open("list_wetterstationen.txt", "r")
+    f=open("../list_wetterstationen.txt", "r")
     while True:
         a=f.readline()
         if a.split()[0]==id: break
@@ -23,7 +23,7 @@ def get_station_from_id(id):
     s=""
     for w in wl:
         s+=w+" "
-    return s
+    return s[0:-1]
 
 tdiffs=[]
 
@@ -46,7 +46,8 @@ for id in tdict.keys():
     if id == "02953": continue
      
     if not id in useids: continue
-    print(id, get_station_from_id(id))
+    statcode=get_station_from_id(id)
+    print(id, statcode)
 
     import datetime
     
@@ -114,7 +115,7 @@ for id in tdict.keys():
     ax.set_ylabel("average temperatur [°C]")
     ax.set_xlabel("year")
     
-    ax.set_title(get_station_from_id(id))
+    ax.set_title(statcode)
     tdiffs.append(tdiff)
 
 line_segments = LineCollection(verts,linewidth=2, cmap="Blues_r", array=alpha_array)
@@ -130,7 +131,7 @@ ax.arrow(datetime.datetime(lyear,6,1), meanb+tdiff,0,-tdiff, head_width=2000, le
 
 #ax.set_ylim(-4,9)
 
-plt.savefig("temperatur_all.png")
+plt.savefig("temperatur_"+statcode+".png")
 
 
 

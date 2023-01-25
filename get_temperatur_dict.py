@@ -208,4 +208,4 @@ plt.savefig("temperatur_all.png")
 
 import pickle
 
-pickle.dump(tdict, open("tdict.pickle", "wb"))
+pickle.dump(tdict, open("./dicts/tdict.pickle", "wb"))
