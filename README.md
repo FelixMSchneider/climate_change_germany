@@ -35,7 +35,7 @@
     cd hist_plot
     python plot_hist_curves.py
 
-![Tdiff_Germany](hist_plot/temperatur_all_wetterstations.png)
+<img src="hist_plot/temperatur_all_wetterstations.png" width="128"/>
 
 ### create map plot (using GMT 4) to compare Tdiff 
 
